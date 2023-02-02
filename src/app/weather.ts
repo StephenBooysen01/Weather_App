@@ -1,3 +1,5 @@
+import { Time } from "@angular/common";
+
 class Weather {
     current_weather: Current_Weather;
 
@@ -9,10 +11,12 @@ class Weather {
 class Current_Weather {
     temperature: number;
     windspeed: number;
+   
 
     constructor() {
         this.temperature = 0;
         this.windspeed = 0;
+        
     }
 }
 

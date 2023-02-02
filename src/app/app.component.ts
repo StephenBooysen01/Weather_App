@@ -18,6 +18,9 @@ import { Weather } from './weather';
 export class AppComponent  implements OnInit {
    // variables 
    temperature: any;
+   thisWindSpeed : any;
+   currentTime : any;
+   isDay : boolean;
 
    title = 'Angular-Weather-app';
   
@@ -27,7 +30,7 @@ export class AppComponent  implements OnInit {
 
     console.log("test")
 
-   let  thisData: any;
+   
 
    }
 
@@ -38,10 +41,23 @@ export class AppComponent  implements OnInit {
 
         // set temparture
         this.temperature = ((<Weather>data).current_weather.temperature);
-        
+        // set windspeed
+        this.thisWindSpeed =((<Weather>data).current_weather.windspeed);
 
         // your code to access the temperature data goes here
       });
+
+      // date 
+      this.currentTime = new Date().toLocaleTimeString();
+
+      console.log('this is ' + this.currentTime);
+
+      // is day
+        this.isDay = weatherService.getIsDay();
+
+     
+
+      
    
 
 

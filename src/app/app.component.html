@@ -1,7 +1,7 @@
 <div class = "Container">
     <div class = "upper-data">
-        <img src ="../assets/images/hot.png"  *ngIf="14 > 15">
-        <img src ="../assets/images/cold.png" *ngIf="14 <= 15">
+        <img src ="../assets/images/hot.png"  *ngIf="isDay">
+        <img src ="../assets/images/cold.png" *ngIf="!isDay">
 
         <div class = "weatherData">
             <div class = "location"> Melbourne
@@ -12,13 +12,14 @@
 
             </div>
         </div>
+
     </div>
-        
-    
+
+          
     <div class = "lowerData">
         
         <div class="moreInfoLabel">
-            More Information 
+            More Information  {{currentTime}}
         </div>
         <div class="moreInfoContianer">
             <!-- min temp-->
@@ -53,14 +54,14 @@
                 </div>
             </div>
 
-            <!-- max temp-->
+            <!-- wind -->
             <div class="infoBlock">
                 <div class="infoBlockLabel">
                     <img src="../assets/images/wind.png">
                     <span>wind</span>
                 </div>
-                <div class="infoBlockValue">
-                    11 km/h
+                <div class="infoBlockValue" *ngIf="thisWindSpeed">
+                    {{thisWindSpeed}} km/h
                 </div>
             </div>
 
